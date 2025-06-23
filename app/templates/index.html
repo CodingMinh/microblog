@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+    <h1>{{ _('Hi %(username)s!', username=current_user.username) }}</h1>
+    <!-- 
+        - action attribute specifies where the form data will be sent (i.e. the URL or endpoint the form submits to)
+        - when to use non-empty action: when I want to send form data to a different route/page 
+        (e.g. for the follow/unfollow forms, I want to send form data to the follow/unfollow route in routes.py
+        since those routes handle these functions)
+        - when to use empty action: when the form is handled on the same page
+        (e.g. when I want to edit profile by entering data into a form, I want the same view function in routes.py to
+        handle processing the form data and change my profile)
+    -->
+    {% if form %} <!-- only allow rendering the blog post web form if it was passed by the view function -->
+        <!-- (not needed anymore because bootstrap framework is used)
+        <form action="", method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.post.label }}<br>
+                {{ form.post(cols=32, rows=4) }}<br>
+                {% for error in form.post.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+        -->
+        {{ wtf.quick_form(form) }}
+    {% endif %}
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+    <nav aria-label="Post navigation">
+        <ul class="pagination">
+            <li class="page-item{% if not prev_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ prev_url }}">
+                    <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
+                </a>
+            </li>
+            <li class="page-item{% if not next_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ next_url }}">
+                    {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
