@@ -253,16 +253,19 @@ class User(UserMixin, db.Model):
         return n
     
     """ helper methods for submitting a background job/task or checking on a task from any part of the application """
+    """ submit a background job/task to rq queue and add a Task instance to the database """
     def launch_task(self, name, description, *args, **kwargs):
         rq_job = current_app.task_queue.enqueue(f'app.tasks.{name}', self.id, *args, **kwargs)
         task = Task(id=rq_job.get_id(), name=name, description=description, user=self)
         db.session.add(task)
         return task
 
+    """ returns a list of all tasks in progress """
     def get_tasks_in_progress(self):
         query = self.tasks.select().where(Task.complete == False)
         return db.session.scalars(query)
 
+    """ check if a certain task is in progress or not """
     def get_task_in_progress(self, name):
         query = self.tasks.select().where(Task.name == name, Task.complete == False)
         return db.session.scalar(query)

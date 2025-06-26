@@ -194,3 +194,15 @@ def notifications():
     query = current_user.notifications.select().where(Notification.timestamp > since).order_by(Notification.timestamp.asc())
     notifications = db.session.scalars(query)
     return [{'name': n.name, 'data': n.get_data(), 'timestamp': n.timestamp} for n in notifications]
+
+""" export a json file of all the posts made by the user, handled as a background job/task """
+@bp.route('/export_posts')
+@login_required
+def export_posts():
+    if current_user.get_task_in_progress('export_posts'):
+        flash(_('An export task is currently in progress!'))
+    else:
+        current_user.launch_task('export_posts', _('Exporting posts...'))
+        # since launch_task only adds the Task instance to the database and not commit it, we do it here
+        db.session.commit()
+    return redirect(url_for('main.user', username=current_user.username))

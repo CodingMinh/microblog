@@ -13,6 +13,8 @@ def send_email(subject, sender, recipients, text_body, html_body, attachments=No
     msg.body = text_body
     msg.html = html_body
     if attachments:
+        # attachments is a list of tuples, each tuple have filename, media type, and the actual file data
+        # using *attachment automatically passes the 3 elements in the attachment tuple as corresponding arguments
         for attachment in attachments:
             msg.attach(*attachment)
     if sync:
