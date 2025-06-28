@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-21 08:46+0700\n"
+"POT-Creation-Date: 2025-06-27 11:58+0700\n"
 "PO-Revision-Date: 2025-06-02 17:04+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: vi\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: app/__init__.py:23
+#: app/__init__.py:24
 msgid "Please log in to access this page"
 msgstr "Vui lòng đăng nhập để truy cập trang này."
 
@@ -159,17 +159,25 @@ msgstr "Bạn không thể hủy theo dõi chính mình!"
 msgid "You successfully unfollowed %(username)s!"
 msgstr "Bạn đã hủy theo dõi %(username)s thành công!"
 
-#: app/main/routes.py:170
+#: app/main/routes.py:171
 msgid "Your message has been sent"
 msgstr "Tin nhắn của bạn đã được gửi"
 
-#: app/main/routes.py:172
+#: app/main/routes.py:173
 msgid "Send message"
 msgstr "Gửi tin nhắn"
 
-#: app/main/routes.py:185
+#: app/main/routes.py:187
 msgid "View message"
 msgstr "Xem tin nhắn"
+
+#: app/main/routes.py:203
+msgid "An export task is currently in progress!"
+msgstr "Hiện đang có một tác vụ xuất khẩu đang được tiến hành!"
+
+#: app/main/routes.py:205
+msgid "Exporting posts..."
+msgstr "Đang xuất bài đăng..."
 
 #: app/templates/_post.html:15
 #, python-format
@@ -196,7 +204,7 @@ msgstr "Trang cá nhân"
 msgid "Messages"
 msgstr "Tin nhắn"
 
-#: app/templates/base.html:70
+#: app/templates/base.html:75
 msgid "Logout"
 msgstr "Đăng xuất"
 
@@ -206,12 +214,12 @@ msgid "Hi %(username)s!"
 msgstr "Chào %(username)s!"
 
 #: app/templates/index.html:38 app/templates/search.html:12
-#: app/templates/user.html:53
+#: app/templates/user.html:56
 msgid "Newer posts"
 msgstr "Các bài viết mới hơn"
 
 #: app/templates/index.html:43 app/templates/search.html:17
-#: app/templates/user.html:58
+#: app/templates/user.html:61
 msgid "Older posts"
 msgstr "Các bài viết cũ hơn"
 
@@ -246,15 +254,19 @@ msgstr "Đang theo dõi %(count)d người"
 msgid "Edit your profile"
 msgstr "Chỉnh sửa trang cá nhân của bạn"
 
-#: app/templates/user.html:23 app/templates/user_popup.html:15
+#: app/templates/user.html:20
+msgid "Export your posts"
+msgstr "Xuất bài viết của bạn"
+
+#: app/templates/user.html:26 app/templates/user_popup.html:15
 msgid "Follow"
 msgstr "Theo dõi"
 
-#: app/templates/user.html:36 app/templates/user_popup.html:22
+#: app/templates/user.html:39 app/templates/user_popup.html:22
 msgid "Unfollow"
 msgstr "Hủy theo dõi"
 
-#: app/templates/user.html:41
+#: app/templates/user.html:44
 msgid "Send private message"
 msgstr "Gửi tin nhắn riêng"
 

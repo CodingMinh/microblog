@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-21 08:46+0700\n"
+"POT-Creation-Date: 2025-06-27 11:58+0700\n"
 "PO-Revision-Date: 2025-06-02 15:23+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: app/__init__.py:23
+#: app/__init__.py:24
 msgid "Please log in to access this page"
 msgstr "Por favor ingrese para acceder a esta página."
 
@@ -82,7 +82,9 @@ msgstr "¡Felicidades, ahora estás registrado!"
 
 #: app/auth/routes.py:60
 msgid "Check your email for the instructions to reset your password"
-msgstr "Revisa tu correo electrónico para las instrucciones para restablecer tu contraseña"
+msgstr ""
+"Revisa tu correo electrónico para las instrucciones para restablecer tu "
+"contraseña"
 
 #: app/auth/routes.py:78
 msgid "Your password has been reset"
@@ -137,6 +139,7 @@ msgid "Edit profile"
 msgstr "Editar tu perfil"
 
 #: app/main/routes.py:116 app/main/routes.py:135
+#, python-format
 msgid "User %(username)s not found"
 msgstr "Usuario %(username)s no encontrado."
 
@@ -145,6 +148,7 @@ msgid "You cannot follow yourself!"
 msgstr "¡No puedes seguirte a ti mismo!"
 
 #: app/main/routes.py:123
+#, python-format
 msgid "You are now following %(username)s!"
 msgstr "¡Ahora sigues a %(username)s!"
 
@@ -153,22 +157,32 @@ msgid "You cannot unfollow yourself!"
 msgstr "¡No puedes dejar de seguirte a ti mismo!"
 
 #: app/main/routes.py:142
+#, python-format
 msgid "You successfully unfollowed %(username)s!"
 msgstr "Has dejado de seguir a %(username)s exitosamente."
 
-#: app/main/routes.py:170
+#: app/main/routes.py:171
 msgid "Your message has been sent"
 msgstr "Tu mensaje ha sido enviado."
 
-#: app/main/routes.py:172
+#: app/main/routes.py:173
 msgid "Send message"
 msgstr "Enviar mensaje"
 
-#: app/main/routes.py:185
+#: app/main/routes.py:187
 msgid "View message"
 msgstr "Ver mensaje"
 
+#: app/main/routes.py:203
+msgid "An export task is currently in progress!"
+msgstr "¡Actualmente estamos realizando una tarea de exportación!"
+
+#: app/main/routes.py:205
+msgid "Exporting posts..."
+msgstr "Exportando publicaciones..."
+
 #: app/templates/_post.html:15
+#, python-format
 msgid "%(username)s said %(when)s:"
 msgstr "%(username)s dijo %(when)s:"
 
@@ -192,21 +206,22 @@ msgstr "Perfil"
 msgid "Messages"
 msgstr "Mensajes"
 
-#: app/templates/base.html:70
+#: app/templates/base.html:75
 msgid "Logout"
 msgstr "Cerrar sesión"
 
 #: app/templates/index.html:5
+#, python-format
 msgid "Hi %(username)s!"
 msgstr "¡Hola, %(username)s!"
 
 #: app/templates/index.html:38 app/templates/search.html:12
-#: app/templates/user.html:53
+#: app/templates/user.html:56
 msgid "Newer posts"
 msgstr "Publicaciones más recientes"
 
 #: app/templates/index.html:43 app/templates/search.html:17
-#: app/templates/user.html:58
+#: app/templates/user.html:61
 msgid "Older posts"
 msgstr "Publicaciones anteriores"
 
@@ -215,6 +230,7 @@ msgid "Search results"
 msgstr "Resultados de búsqueda"
 
 #: app/templates/send_message.html:5
+#, python-format
 msgid "Send message to %(recipient)s"
 msgstr "Enviar mensaje a %(recipient)s"
 
@@ -227,10 +243,12 @@ msgid "Last seen on"
 msgstr "Visto por última vez el"
 
 #: app/templates/user.html:16 app/templates/user_popup.html:9
+#, python-format
 msgid "%(count)d followers"
 msgstr "%(count)d seguidores"
 
 #: app/templates/user.html:16 app/templates/user_popup.html:9
+#, python-format
 msgid "%(count)d following"
 msgstr "%(count)d seguidos"
 
@@ -238,15 +256,19 @@ msgstr "%(count)d seguidos"
 msgid "Edit your profile"
 msgstr "Editar tu perfil"
 
-#: app/templates/user.html:23 app/templates/user_popup.html:15
+#: app/templates/user.html:20
+msgid "Export your posts"
+msgstr "Exporta tus publicaciones"
+
+#: app/templates/user.html:26 app/templates/user_popup.html:15
 msgid "Follow"
 msgstr "Seguir"
 
-#: app/templates/user.html:36 app/templates/user_popup.html:22
+#: app/templates/user.html:39 app/templates/user_popup.html:22
 msgid "Unfollow"
 msgstr "Dejar de seguir"
 
-#: app/templates/user.html:41
+#: app/templates/user.html:44
 msgid "Send private message"
 msgstr "Enviar mensaje privado"
 
@@ -295,3 +317,4 @@ msgstr "El administrador ha sido notificado. ¡Disculpa las molestias!"
 
 #~ msgid "Click to Register!"
 #~ msgstr "¡Haz clic para registrarte!"
+
